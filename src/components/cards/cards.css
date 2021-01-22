@@ -1,0 +1,15 @@
+main {
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr);
+    padding: 70px;
+    
+}
+.card-container {
+    margin: 10px;
+    box-shadow: 2px 4px 8px #585858;
+    border-radius: 10px;
+}
+.card-image img {
+    width: 100%;
+    height: 300px;
+}

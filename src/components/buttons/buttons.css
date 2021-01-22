@@ -1,0 +1,10 @@
+.signin-btn, .signup-btn {
+    height: 35px;
+    width: 90px;
+    top: 0px;
+    border-radius: 4px;
+    background-color: #BD220B;
+    border: none;
+    color:#fff;
+    font-weight: bold;
+}
