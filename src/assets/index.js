@@ -8,6 +8,8 @@ import Manwhowouldbeking from "../assets/images/manwhowouldbeking.png";
 import Soundofmusic from "../assets/images/soundofmusic.png";
 import Hero from "../assets/images/Hero Image.png";
 import RewindLogo from "../assets/icons/RewindLogo.png";
+import SignUpSuccess from "../assets/images/signupsuccess.png";
+import LandingCarousel from "../assets/images/landing.png"
 
 export {
     Backtothefuture,
@@ -19,6 +21,8 @@ export {
     Manwhowouldbeking,
     Soundofmusic,
     Hero,
-    RewindLogo
+    RewindLogo,
+    SignUpSuccess,
+    LandingCarousel
 
 }
