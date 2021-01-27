@@ -1,10 +1,13 @@
+import React from "react";
+// import {Card} from "./components"
+import Upload from "./Upload";
 import './App.css';
-import {Signup} from "./pages";
 
 function App() {
   return (
     <div className="App">
-      <Signup/>
+        <Upload/>
+      {/* <Card/> */}
     </div>
   );
 }
