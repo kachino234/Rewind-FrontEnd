@@ -58,7 +58,20 @@ input::placeholder{
     text-align: left;
 }
 
-.custom-file-upload {
+.customUpload {
+    border: 1px solid #ccc;
+    color:white;
+    border: none;
+    display: inline-block;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 10px;
+    line-height: 36px;
+    background: #BD220B;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+.Custom-file-Upload {
     border: 1px solid #ccc;
     color:white;
     border: none;
