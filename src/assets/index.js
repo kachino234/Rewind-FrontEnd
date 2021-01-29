@@ -7,7 +7,18 @@ import Adventure from "./images/adventure.png";
 // import countDown from "./images/countdown.gif";
 import Avatar from "./images/avatar.png";
 import Line from "./images/line.png";
+import Logo from "./images/Rewind-logo.svg";
 
 // import Home from "./images/sidebar/Home-Icon.svg";
 
-export { Frame, Action, Comedy, Horror, Romance, Adventure, Avatar, Line };
+export {
+  Frame,
+  Action,
+  Comedy,
+  Horror,
+  Romance,
+  Adventure,
+  Avatar,
+  Line,
+  Logo,
+};

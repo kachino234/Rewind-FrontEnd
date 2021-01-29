@@ -48,6 +48,9 @@ form {
 }
 
 .signup-info p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: rgba(40, 44, 64, 0.6);
     size: 16px;
     line-height: 24px;
@@ -55,6 +58,9 @@ form {
 }
 
 .signup-info h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: Manrope;
     height: 40px;
     font-size: 36px;

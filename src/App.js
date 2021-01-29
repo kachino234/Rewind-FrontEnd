@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 //PAGES
 import { Signup } from "./pages";
-// import { Dashboard } from "./pages";
 import { Dashboard } from "./pages";
+import { Footer } from "./components";
 
 function App() {
   return (
@@ -12,8 +12,8 @@ function App() {
       <Router>
         <Switch>
           <Route path="/sign-up" component={Signup} />
-          {/* <Route path="/dashboard" component={Dashboard} /> */}
           <Route path="/dash" component={Dashboard} />
+          <Route path="/footer" component={Footer} />
         </Switch>
       </Router>
     </>

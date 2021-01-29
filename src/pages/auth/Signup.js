@@ -1,29 +1,29 @@
 import React from "react";
 import './Signup.css';
 import { useForm } from "react-hook-form";
-// import { Frame } from "../../assets";
 import axios from 'axios';
 
 const Signup = () => {
     const { handleSubmit, handleChange, errors, register } = useForm()
 
-    const onSubmit = async values => {
-        console.log(values);
+    const onSubmit = (values) => {
+        // e.preventDefault();
+        // console.log(values);
 
+        const post = async () => {
+            await axios.post('https://rewind-api.herokuapp.com/users/sign-up', {
+            
 
-        await axios.post('https://rewind-api.herokuapp.com/users/sign-up', {
-            username : "meee",
-            email : "a@gmail.com",
-            password : "12345678",
-            confirmPassword : "12345678"
-
-        })
+            })
             .then(response => {
                 console.log(response)
             })
             .catch(error => {
                 console.log(error.response)
             });
+        }
+        
+           
     }
 
     return (
@@ -67,6 +67,10 @@ const Signup = () => {
                         {errors.confirmPassword && <p>Passwords don't match</p>}
 
                         <button className="button1" type="submit" value="Submit">Sign Up</button>
+
+                        {/* const handleSubmit = (e) => {
+                            e.preventDefault();
+                            } */}
                     </form>
                 </section>
 

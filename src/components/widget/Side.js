@@ -16,7 +16,7 @@ function Side() {
         if (element.style.opacity === "") {
           element.style.display = "none";
         } else {
-          // element.style.display = "block";
+          element.style.display = "block";
         }
       }
     });
@@ -55,7 +55,7 @@ function Side() {
         </div>
         <div className="prac-home-icon d-flex">
           <MdHome />
-          {/* <h5 className="icon-text ml-2">Overview</h5> */}
+          <h5 className="icon-text ml-2">Overview</h5>
         </div>
         <div className="prac-save-icon d-flex">
           <RiUploadCloudFill />
