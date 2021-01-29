@@ -79,54 +79,122 @@ header nav .nav-list> :first-child {
 .search-input {
     position: absolute;
     top: 24px;
+    z-index: 5;
     /* right: ; */
     width: 100%;
     display: flex;
-    justify-content: flex-end;
-}
-.search-input input {
-    padding: 5px;
-    border-radius: 15px;
-    width: 60%;
-}
-.search-bar-container {
-    height: 50vh;
-    background-color:purple;
-    width: 100%;
-    box-shadow: 2px 4px 8px #585858;
-    z-index: 4;
-    position: relative;
-    top: 50px;
-    display: flex;
     justify-content: center;
 }
-.movie-search-bar {
-    padding:10px;
-    width: 50%;
-    margin: auto;
-    border-radius: 10px;
+.search-input input {
+    padding:3px;
+    border-radius: 5px;
+    width: 40%;
     border: none;
-    position: absolute;
-    z-index: 5;
-    top: 30px;
-    /* transition: 5s ease-in-out ; */
 }
-.mask {
-    background-color:rgba(0,0,0,0.3);
-    height: 100vh;
+.search-nav {
+    background-color: #121212;
+    position: absolute;
     width: 100%;
+    top: 0;
+    align-items: center !important;
+    padding: 24px 120px;
+    z-index: 4;
+}
+.search-display {
+    background-color: #585858;
+    padding : 50px;
+    width: 40%;
+    position: absolute;
+    top: 63px;
     z-index: 5;
-    position: relative;
-    top: 50px;
-   
+}
+.search-display span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    color: #ccc;
+}
+.search-display-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+    top: 0;
+    left: 0;
+}
+.search-list {
+    display: grid;
+    grid-template-columns: 20% 60%;
+    gap: 15px;
+    height: 102px;
+    width: 100%;
+    padding: 5px;
+    list-style: none;
+}
+.search-list:hover {
+    background-color: #121212;
+}
+
+.search-list-movie-poster img{
+    width: 80px !important;
+    height: 90px !important;
+}
+.search-list-movie-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.search-list-movie-details h4 {
+font-family: SF Pro Display;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 24px;
+color: #FFFFFF;
+}
+.search-list-movie-details-footer {
+display: flex;
+}
+.search-list-movie-details-footer span {
+font-family: Avenir Next LT Pro;
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 16px;
+letter-spacing: 0.4px;
+color: #404040;
+margin: 0 5px 0 0;
 }
 
 .signup-modal {
     width: 100% !important;
 }
+.close-btn {
+    position: absolute;
+    top: 40px;
+    right: 270px;
+    z-index: 5;
+    background:inherit;
+    /* padding: 10px; */
+    font-size: 40px;
+    border: none;
+    color: #ccc;
+}
+.signin-close {
+    position: absolute;
+    top: 60px;
+    right: 230px;
+    z-index: 5;
+    background-color: inherit;
+    /* padding: px; */
+    font-size: 40px;
+    border: none;
+    color: #ccc;
+}
 
 
-.card {
+/* .card {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
@@ -142,17 +210,17 @@ header nav .nav-list> :first-child {
 }
 .card-text {
     /* list-style: none; */
-    color:#fff;
+    /* color:#fff;
     padding: 20px;
 }
 .card-text ul {
     list-style: none;
-}
+} */ 
 
 
 
 
-@media only screen 
+/* @media only screen 
   and (min-device-width: 768px) 
   and (max-device-width: 1200px) 
   and (-webkit-min-device-pixel-ratio: 1) {
@@ -173,9 +241,9 @@ header nav .nav-list> :first-child {
         right: 40px;
     }
 
-  }
+  } */
 
-  @media only screen 
+  /* @media only screen 
   and (min-device-width: 400px) 
   and (max-device-width: 768px) 
   and (-webkit-min-device-pixel-ratio: 1) {
@@ -195,4 +263,4 @@ header nav .nav-list> :first-child {
         top: 0;
         right: 40px;
     }
-  }
+  } */

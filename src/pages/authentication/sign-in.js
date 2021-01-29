@@ -3,29 +3,32 @@ import swal from "sweetalert";
 import {useForm} from "react-hook-form";
 // import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import "./auth.css";
-import RewindApi from "../../api/RewindApi";
+// import RewindApi from "../../api/RewindApi";
+import axios from "axios";
 
 
 const SignIn = () => {
 
-    const { register, handleSubmit, errors, watch } = useForm();
+    const { register, handleSubmit, errors} = useForm();
 
     const onSubmit = (data) => {
         console.log(data);
 
-          RewindApi.post("users/sign-up",data).then((d) =>{
-        console.log(d);
-        if(d.status === 201) {
+          axios.post("users/login",data).then((response) =>{
+              localStorage.setItem('token', response.data.token);
+        console.log(response);
+        if(response.status === 202) {
 
                   swal({
       title: "Done!",
-      text: "Successfully Registered",
+      text: "Successfully Logged In",
       icon: "success",
       timer: 4000,
       button: false
     })
+    
         }
-         if(d.status === 401) {
+         else if(response.status === 404) {
 
             swal({
                 title: "Warning!",
@@ -36,7 +39,7 @@ const SignIn = () => {
               })
 
         }
-         if(d.status === 404) {
+         if(response.status === 404) {
             swal({
                 title: "Error!",
                 text: "Contact Customer Services For More Details",
@@ -59,20 +62,36 @@ const SignIn = () => {
                         <span>Welcome, we missed you!</span>
                     </header>
                     <div className="grid-layout-100">
-                        <label className="sign-in-form-label">Username</label>
-                        <input type="text" placeholder="Enter your username" className="sign-in-form-input" required/>
+                        <label className="sign-in-form-label">Email</label>
+                        <input 
+                            type="text" 
+                            placeholder="Enter your username" 
+                            className="sign-in-form-input" 
+                            name="email"
+                            ref={register({ required : true})}
+                        />
+                        {errors.email && <small>This field is required</small>}
                     </div>
 
                     <div className="grid-layout-100">
                         <label className="sign-up-form-label">Password</label>
-                        <input type="password" placeholder="Enter your password" className="sign-in-form-input" required/>
+                        <input 
+                            type="password" 
+                            placeholder="Enter your password" 
+                            className="sign-in-form-input" 
+                            name="password"
+                            ref={register({ required : true})}
+                        />
+                         {errors.password && errors.password.type === "required" && (
+                            <small className="error">This field is required</small>
+                         )}
                     </div>
 
                     <div className="terms-pass-reset">
-                        <div>
-                            <input label="Remember me" type="radio"/>
+                        <div style={{color : '#1C1C1C', width:'50%'}}>
+                        <input  type="radio" style={{marginRight:'10px'}}/>Remember me
                         </div>
-                        <a href="/">Forgot Password?</a>
+                        <a href="/" style={{width:'50%', display:'flex', justifyContent:'flex-end'}}>Forgot Password?</a>
                     </div>                    
                     <button type="submit" className="sign-in-btn">
                         Sign In

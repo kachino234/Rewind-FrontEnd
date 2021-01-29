@@ -1,28 +1,72 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./cards.css";
-import {Junglebook} from "../../assets"
+import {MovieModal} from "../../components";
+import {Playicon} from "../../assets"
+import AOS from "aos";
+import 'aos/dist/aos.css'
+import {Link } from "react-router-dom";
 
 const Card = ({ movies, isLoading }) => {
+    AOS.init();
+
+   
+    const [movieModal, setMovieModal] = useState(false);
+
+    const toggleMovieModal = () => {
+      setMovieModal(prev => !prev);
+    }
+
+    // const [query, setQuery] = useState('');
+    // const [movies, setMovies] = useState([]);
+    // const getMovies = async(e) => {
+    //     e.preventDefault();
+    //     // console.log("ec det weor,l")
+    //     // const query = "Karashika";
+    //     const url = `https://rewind-test.herokuapp.com/movies/search/movie?title=${query}`;
+        
+    //     try {
+            
+    //         const res = await fetch(url);
+    //         const data = await res.json();
+    //         // console.log(data);
+    //         setMovies(data.result);
+    //     }catch(err) {
+    //         console.error(err); 
+    //     }
+     
+
+    // }
 
     return isLoading ? <h1>Loading....</h1> : <main className="card-grid">
         {/* this.state.movies = movies */}
             {movies.map( movie => (
                 // <h1>{movie.title}</h1>
-                <section className="card-container">
-                    <div className="card-body">
-                        <section className="card-image">
+                <section className="movie-container-holder" key={movie._id}>
+                    <div className="movie-container" >
+                        <section className="movie-poster">
                             <img src={movie.coverpics_url} alt="poster" />
-                            {/* <iframe src={movie.coverpics_url}></iframe> */}
+                            <span className="movie-poster-overlay" onclick={toggleMovieModal}>
+                                
+                                {/* <Link to={`/movieplayer/${movie._id}`}>
+                                
+                                
+                                </Link> */}
+                                <iframe src={movie.movie_url}>
+                                    <img src={Playicon} alt='play'/>    
+                                </iframe>
+                            </span>
                         </section>
-                        <section className="card-title">
+                        <section className="movie-title">
                             <h4>{movie.title}</h4>
                         </section>
-                        <section className="card-text">
-                            <p>{movie.description}</p>
+                        <section className="movie-container-footer">
+                            <ul>
+                                <li>{movie.release_date}</li>
+                                <li>Coloured</li>
+                                <li>2hr 9mins</li>
+                            </ul>
                         </section>
-                        <footer className="card-footer">
-                            <a href="google.com">{movie.release_date}</a>
-                        </footer>
+                        <MovieModal movieModal={movieModal} setMovieModal={setMovieModal}/>
                     </div>
                 </section>
             ))}

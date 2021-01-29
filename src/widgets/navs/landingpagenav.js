@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import "../widgets.css";
 import AOS from "aos";
 import 'aos/dist/aos.css'
@@ -6,7 +6,8 @@ import { RewindLogo } from "../../assets";
 import { FaSearch }  from "react-icons/fa";
 import { FiMenu }  from "react-icons/fi";
 import { SignInModal, SignUpModal, SearchModal } from "../../widgets";
-// import { SearchModal } from './searchmodal';
+import RewindMoviesApi from "../../api/RewindMoviesApi";
+import axios from 'axios';
 
 
 
@@ -21,6 +22,19 @@ const Landingpagenav = () => {
   const SearchBar = () => {
     setShowSearchBar(prev => !prev)
   }
+
+
+  //Search Function 
+  // const [state, setState] = useState({
+  //   results : []
+  // });
+
+  // const onSearch = async(text) => {
+  //   const results = await RewindMoviesApi.get("/movies");
+  //   setState(prevState => {
+  //     return {...prevState, results : results} 
+  //   }) 
+  // }
 
     //Movies Display Function
   // const [query, setQuery] = useState('');
@@ -90,7 +104,32 @@ const Landingpagenav = () => {
     const togglesigninModal = () => {
       setSigninModalIsOpen(prev => !prev);
     }
-       
+
+    
+    const [ loggedIn, setLoggedIn] = useState(false);
+    useEffect(() => {
+      
+      const config = {
+        headers : {
+          Authorization : 'Bearer' + localStorage.getItem('token')
+        }
+      };
+
+      axios.get('users', config).then(
+        response => {
+          setLoggedIn(true);
+         
+        },
+        error =>  {
+          console.log(error);
+        }
+      )
+
+      
+    }, [])
+
+    
+
      return (
           <>
 
@@ -103,7 +142,12 @@ const Landingpagenav = () => {
                     <ul className="nav-list">
                       <li className="nav-item">
                         <FaSearch onClick={SearchBar}/>
-                        <SearchModal showSearchBar={showSearchBar} setShowSearchBar={setShowSearchBar}/>
+                        <SearchModal 
+                          showSearchBar={showSearchBar} 
+                          setShowSearchBar={setShowSearchBar}
+                          // onSearch={onSearch}
+                          // results={state.results}
+                         />
                       </li>
                       <li className="nav-item">
                         {/* <Link>
@@ -118,13 +162,21 @@ const Landingpagenav = () => {
                         Categories
                       </li>
                       <li className="nav-item">
-                      <button onClick={togglesigninModal} className="signin-btn">Sign In</button>
+                        {!loggedIn ? (
+                          <button onClick={togglesigninModal} className="signin-btn">Sign In</button>
+                        ):<button className="signin-btn">Username</button> }
+                       
                         <SignInModal signinmodalIsOpen={signinmodalIsOpen} setSigninModalIsOpen={setSigninModalIsOpen}/>  
                       </li>
-                      <li className="nav-item ">
-                        <button onClick={togglesignupModal} className="signup-btn">Sign Up</button>
-                        <SignUpModal modalIsOpen={signupmodalIsOpen} setModalIsOpen={setSignupModalIsOpen}/>
-                      </li>
+                      {!loggedIn ? (
+                          <li className="nav-item ">
+                          <button onClick={togglesignupModal} className="signup-btn">Sign Up</button>
+                          <SignUpModal modalIsOpen={signupmodalIsOpen} setModalIsOpen={setSignupModalIsOpen}/>
+                        </li>
+                      ) : <li className="nav-item ">
+                      <button onClick={togglesignupModal} className="signup-btn">Log Out</button>
+                    </li> }
+                      
                     </ul>
                     
                     <span className="mobile-nav-btn">

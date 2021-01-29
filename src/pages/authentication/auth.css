@@ -1,3 +1,5 @@
+
+
 /* @font-face {
     font-family: AvenirNextLTPro;
 } */
@@ -14,53 +16,60 @@
 
 .sign-up-container {
     display:grid;
-    grid-template-columns: 65% 35%;
+    grid-template-columns: 60% 35%;
     width:100%;
-    height: 100px !important;
     z-index: 4;
     position: relative;
-    top: 0;
+    top: -33px;
     
 }
 .sign-in-container {
     display:grid;
     grid-template-columns: 65% 35%;
     width:100%;
-    height: 640px;
-    margin:auto  auto;
     z-index: 4;
     position: relative;
     top: 0;
 }
 .sign-up-form {
-    padding:10px 119px;
+    padding:50px 70px;
     position: relative;
     left: 15px;
     border-radius: 15px;
     background-color: #fff;
-    box-shadow: 2px 4px 8px #585858;
 }
-.sign-up-form-header {
+.sign-in-form {
+    padding:60px 70px;
+    position: relative;
+    left: 15px;
+    border-radius: 15px;
+    background-color: #fff;
+    /* box-shadow: 2px 4px 8px #585858; */
+}
+.sign-up-form-header,
+.sign-in-form-header {
     width: 376px;
     margin: auto;
-    padding-bottom: 25px;
+    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
 }
-.sign-up-form-header  h2 {
-    font-family: Manrope;
+.sign-up-form-header  h2,
+.sign-in-form-header h2 {
+font-family: 'Inter', sans-serif;
 font-style: normal;
 font-weight: bold;
-width: 134px;
+width: 170px;
 height: 40px;
 font-size: 36px;
 line-height: 110%;
 padding-bottom: 10px;
 color: #1C1C1C;
 }
-.sign-up-form-header span {
+.sign-up-form-header span,
+.sign-in-form-header span {
     font-family: Avenir Next LT Pro;
 font-style: normal;
 font-weight: normal;
@@ -72,11 +81,12 @@ letter-spacing: 0.5px;
 color: rgba(40, 44, 64, 0.6);
 
 }
-.sign-up-form-label {
+.sign-up-form-label,
+.sign-in-form-label {
     width: 376px;
     height: 16px;
     margin: auto;
-    padding: 10px 0;
+    padding: 7px 0;
     color: #82869A;
     font-size: 12px;
     font-weight: 600;
@@ -90,7 +100,17 @@ color: rgba(40, 44, 64, 0.6);
     outline: none;
     border: none;
     width: 376px;
-    margin:0 auto 25px auto ;
+    margin:0 auto 20px auto ;
+    border-bottom: 2px solid #8C8C8C;
+    background-color: #fff !important;
+}
+ 
+.sign-in-form-input {
+    padding: 10px 0;
+    outline: none;
+    border: none;
+    width: 400px;
+    margin:0 auto 20px auto ;
     border-bottom: 2px solid #8C8C8C;
     background-color: #fff !important;
 }
@@ -101,7 +121,8 @@ small {
     margin-left: auto;
     margin-right: auto;
 }
-.sign-up-form-input::placeholder {
+.sign-up-form-input::placeholder,
+.sign-in-form-input::placeholder {
     font-size: 14px;
     width: 166px;
     height: 20px;
@@ -115,31 +136,33 @@ small {
 }
 
 
-.sign-up-btn {
+.sign-up-btn,
+.sign-in-btn {
     background: #BD220B !important;
     border-color: #BD220B !important;
     border-radius: 8px;
     width: 376px;
-    margin: 20px auto 0 auto;
+    margin: 10px auto 0 auto;
     height: 55px;
     color:#fff;
     border: none;
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
-    font-family: SF Pro Display;
+    font-family: Avenir Next LT Pro;
     letter-spacing: 0.15px;
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
     line-height: 24px;
 }
-.sign-up-btn:hover {
+.sign-up-btn:hover,
+.sign-in-btn:hover {
     background: #BD220B;
 }
 .terms-pass-reset {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 70%;
+    width: 100%;
     margin: auto;
     padding: 20px 0;
 }
@@ -147,46 +170,21 @@ small {
     background-color: black;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+    background-image: url(../../assets/images/signup.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.sign-in-aside {
+    background-color: black;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-image: url(../../assets/images/signin.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.sign-up-success {
-    width: 70%;
-    padding: 70px 50px 50px 50px;
-    border-radius: 15px;
-    box-shadow: 2px 4px 8px #585858; 
-    position: relative;
-    margin: auto;
-    top: -620px;
-    z-index: 6;
-    display: none;
-}
-.sign-up-success p {
-    width: 30%;
-    margin: auto;
-    padding: 20px 0 10px 0;
-    font-family: SF Pro Display;
-font-style: normal;
-font-weight: 500;
-font-size: 30px;
-line-height: 36px
-}
-.sign-up-success-btn {
-    background: #BD220B !important;
-    border-color: #BD220B !important;
-    border-radius: 8px;
-    margin: 30px auto !important;
-    height: 55px;
-    color: #fff;
-    width: 30%;
-    border: none;
-    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
-    /* font-family: SF Pro Display; */
-    letter-spacing: 0.15px;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 24px;
-}
 
 
 @media only screen 

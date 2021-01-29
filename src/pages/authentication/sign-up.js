@@ -2,9 +2,11 @@ import React, {useRef} from 'react';
 // import "../../../node_modules/materialize-css/dist/css/materialize.min.css";
 import {useForm} from "react-hook-form";
 import "./auth.css";
-import RewindApi from "../../api/RewindApi"
+// import RewindApi from "../../api/RewindApi";
 import {SignUpSuccess} from "../../assets";
 import swal from 'sweetalert';
+import axios from "axios";
+
 
 
 const SignUp = () => {
@@ -19,17 +21,15 @@ const SignUp = () => {
         const onSubmit = (data) => {
             console.log(data);
 
-              RewindApi.post("users/sign-up",data).then((d) =>{
+              axios.post("users/sign-up",data).then((d) =>{
             console.log(d);
             if(d.status === 201) {
 
-                      swal({
-          title: "Done!",
-          text: "Successfully Registered",
-          icon: "success",
-          timer: 4000,
-          button: false
-        })
+                swal({
+                    title: "Successfully Registered",
+                    text: "Redirecting........",
+                    type: "success"
+                })
             }
              if(d.status === 401) {
 
@@ -81,24 +81,6 @@ const SignUp = () => {
                   return true
               }
           }
-    // const handleSubm = (e) => {
-    //     e.preventDefault();
-    //     let username = e.target.username.value;
-    //      let email = e.target.email.value;
-    //      let password = e.target.password.value;
-    //      let confirmPassword = e.target.confirmPassword.value;
-    //      let data = {
-    //          username,
-    //          email,
-    //          password,
-    //          confirmPassword
-    //      }
-
-    
-    // }
-    // if (handleSubmit) {
-         
-    // }
 
     return (
         <>
@@ -112,7 +94,7 @@ const SignUp = () => {
                         <label className="sign-up-form-label">Username</label>
                         <input 
                             type="text" 
-                            placeholder="Enter your username" 
+                            placeholder="Enter username" 
                             className="sign-up-form-input" 
                             name="username"
                             ref={register({ required : true})}
@@ -123,7 +105,7 @@ const SignUp = () => {
                         <label className="sign-up-form-label">Email address</label>
                         <input 
                             type="email" 
-                            placeholder="Enter your email" 
+                            placeholder="Enter email" 
                             className="sign-up-form-input" 
                             name="email"
                             ref={register({ required : true, validate : validateEmail})}
@@ -176,15 +158,7 @@ const SignUp = () => {
                 {/* <img */}
             </aside>
             </section>
-            <section className="sign-up-success">
-                <div>
-                    <img src={SignUpSuccess} alt="Success-Image"/>
-                    <p>You have successfully created an account</p>
-                </div>
-                <button className="sign-up-success-btn">
-                    Continue
-                </button>
-            </section>
+           
         </>
     )
 }

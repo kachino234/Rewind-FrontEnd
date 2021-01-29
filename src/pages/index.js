@@ -4,3 +4,4 @@ export * from "./authentication/sign-in";
 export * from "./authentication/resetpassword";
 export * from "./authentication/recoverpassword";
 export * from "./authentication/test";
+export * from "./app/movieplayer";
