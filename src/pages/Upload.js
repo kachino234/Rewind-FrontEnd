@@ -1,6 +1,6 @@
 import React from "react";
 // import {Card} from "./components"
-import './App.css';
+// import './App.css';
 import {useForm} from "react-hook-form";
 import './Upload.css';
 
@@ -93,10 +93,14 @@ const Upload = () => {
 
                 <section className="movie-container">
                     {/* <img src={frameImage} alt="upload movie"/> */}
-                    <label for="file-upload" class="custom-file-upload">
+                    <label for="file-upload" class="custom-file-upload" >
                     Choose file
                     </label>
-                    <input id="file-upload" type="file"/>
+                    <input id="file-upload" type="file" className="customUpload" />
+                    <label for="file-upload" class="custom-file-upload" >
+                    Choose cover image
+                    </label>
+                    <input id="file-upload" type="file" className="customUpload" />
                 </section>
                  
             
@@ -117,4 +121,4 @@ const Upload = () => {
   );
 };
 
-export default Upload;
+export  {Upload};

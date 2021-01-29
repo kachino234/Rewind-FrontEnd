@@ -1,12 +1,19 @@
 import React from "react";
 // import {Card} from "./components"
-import Upload from "./Upload";
+// import Upload from "./pages/Upload.js";
+import {Upload} from './pages/index'
+// import Settings from "./Settings";
+// import Update from "./Update";
 import './App.css';
+// import './Settings.css';
+// import './Update'
 
 function App() {
   return (
     <div className="App">
-        <Upload/>
+       <Upload/>
+        {/* <Settings/>
+        <Update/> */}
       {/* <Card/> */}
     </div>
   );
