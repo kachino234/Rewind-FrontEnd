@@ -29,9 +29,8 @@ function App() {
         <Route path="/SignIn" component={SignIn}/>
            <Route path="/sign-up" component={Signup} />
           <Route path="/dash" component={Dashboard} />
-          <Route path="/footer" component={Footer} />
-        <Footer/>
      </Router> 
+<Footer/>
   </>
   );
 }
