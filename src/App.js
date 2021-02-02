@@ -5,7 +5,7 @@ import {Landingpagenav} from "./widgets";
 
 import './App.css';
 import { Landingpage, SignUp, SignIn, Movieplayer } from "./pages";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 import { Signup } from "./pages";
 import { Dashboard } from "./pages";
 import { Footer } from "./components";
