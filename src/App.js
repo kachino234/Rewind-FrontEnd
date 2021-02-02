@@ -1,14 +1,14 @@
+
 import React from "react";
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-// import {Landingpage} from "./pages";
 import {Landingpagenav} from "./widgets";
-// import {Card} from "./components"
-// import {RecoverPassword} from './pages';
-// import {L}
+
 import './App.css';
 import { Landingpage, SignUp, SignIn, Movieplayer } from "./pages";
-// import {SearchFn} from "./widgets"
-
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Signup } from "./pages";
+import { Dashboard } from "./pages";
+import { Footer } from "./components";
 
 function App() {
 
@@ -27,11 +27,10 @@ function App() {
         )}/>
         <Route path="/Movieplayer" component={Movieplayer}/>
         <Route path="/SignIn" component={SignIn}/>
-         {/* <Route path="/ProductDesignPage" component={ProductDesignPage}/>
-        <Route path="/ApplyPage" component={ApplyPage}/>
-        <Route path="/JournalPage" component={JournalPage}/>
-        <Route path="/FaqPage" component={FaqPage}/>
-        <Footer/> */}
+           <Route path="/sign-up" component={Signup} />
+          <Route path="/dash" component={Dashboard} />
+          <Route path="/footer" component={Footer} />
+        <Footer/>
      </Router> 
   </>
   );
