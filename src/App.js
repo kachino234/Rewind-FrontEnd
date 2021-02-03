@@ -1,6 +1,6 @@
 import React from "react";
 // import {Card} from "./components"
-import Upload from "./Upload";
+import Upload from "./pages/Upload";
 import './App.css';
 
 function App() {
