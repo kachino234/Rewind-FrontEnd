@@ -67,8 +67,7 @@ const Settings = () => {
                             <button className="Updatebtn" 
                             type="Submit" 
                             id="Updatebtn"
-                            name="Updatebtn"
-                            onClick={this.props.handleClick}>Update
+                            name="Updatebtn">Update
                             </button>
             
                     </section>
