@@ -48,32 +48,32 @@ const Upload = () => {
                    
             <section className="upload-form-container">    
                     <div> <h4 id="header-title"> Upload</h4> </div>        
-                    <form className="form" onSubmit={handleSubmit(onSubmit)}>               
+                    <form className="uploadform" onSubmit={handleSubmit(onSubmit)}>               
                         
                         <p id="upload-form-title" ><b>Enter the movie details below</b></p>
 
-                        <label for="title">Title </label>
+                        <label for="title" id="uploadform-label">Title </label>
                         <input type="text" 
                             id="title" 
                             name="title" 
-                            className='form-inputs' 
+                            className='uploadform-inputs' 
                             placeholder="Enter title of movie" 
                             ref={register({required: true})}/>
                             {errors.title && errors.title.type === "required" && ( <p>This is required</p>)}
                     
-                        <label for="year"> Year</label>
+                        <label for="year" id="uploadform-label"> Year</label>
                         <input type="year" 
                             id="year" 
                             name="year" 
-                            className='form-inputs' 
+                            className='uploadform-inputs' 
                             ref={register({required: true})} 
                             placeholder="Enter the year of production"/>
                             {errors.year && errors.year.type === "required" && ( <p>This is required</p>)}
 {/*                          
-                        <label for="category"> Category </label>
+                        <label for="category" id="uploadform-label"> Category </label>
                         <select  name="category" 
-                            id="category" 
-                            className='form-inputs' 
+                            id="selectCategory" 
+                            className='uploadform-inputs' 
                             ref={register({required: true})}>
                                 <option value="">Enter the movie category</option>
                                 <option value="action">Action</option>
@@ -93,10 +93,10 @@ const Upload = () => {
                         {errors.category && errors.category.type === "required" && ( <p>This is required</p>)}
                         
 
-                        <label for="movie-rating"> Movie rating </label>
+                        <label for="movie-rating" id="uploadform-label"> Movie rating </label>
                         <select  name="movie-rating" 
-                            id="movie-rating" 
-                            className='form-inputs' 
+                            id="selectMovie-rating" 
+                            className='uploadform-inputs' 
                             ref={register({required: true})}>
                                 <option value="">Enter the movie category</option>
                                 <option value="General">General(G)</option>
@@ -107,20 +107,20 @@ const Upload = () => {
                         </select>
                             {errors.movierating && errors.movierating.type === "required" && ( <p>This is required</p>)}  */}
                            
-                        <label for="cast"> Cast</label>
+                        <label for="cast" id="uploadform-label"> Cast</label>
                         <input type="text" 
                             id="cast" 
                             name="cast" 
-                            className='form-inputs' 
+                            className='uploadform-inputs' 
                             ref={register({required: true})} 
                             placeholder="Enter the names of cast members and seperate with comma"/>
                             {errors.cast && errors.cast.type === "required" && ( <p>This is required</p>)}
                         
-                        <label for="description"> Description</label>
+                        <label for="description" id="uploadform-label"> Description</label>
                         <input type="text" 
                             id="description" 
                             name="description" 
-                            className='form-inputs' 
+                            className='uploadform-inputs' 
                             ref={register({required: true})} 
                             placeholder="Enter a description of the movie"/>
                             {errors.cast && errors.cast.type === "required" && ( <p>This is required</p>)}

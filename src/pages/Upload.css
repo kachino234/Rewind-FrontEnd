@@ -47,43 +47,35 @@
     margin: auto;
 }
 
-input{
-    /* border: none;
-    border-bottom: 1px solid #ffffff;
-    width: 80%;
-    height: 20px;
-    background-color: #121212;
-    
-    
-    font-size: 14px; */
+.uploadform-inputs{
+    font-size: 14px;
     border: none;
     margin-bottom: 12px;
     width: 80%;
     color: #82869A;
-    padding: 12px 8px;
+    padding: 10px 8px;
     background: #363636;
     border-radius: 4px;
 }
 
-input:focus{
+.uploadform-inputs:focus{
     color: #fafafa;
-    border: 1px solid #F2D2B6;
-    box-shadow: 0px 3px 5px rgba(242, 210, 182, 0.2);
-    border-radius: 4px;
+    outline: 0;
+    border: 0;
 
 }
 
-input::placeholder{
+.uploadform-inputs::placeholder{
     color: #82869A;
     font: Avenir Next LT Pro;
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
     letter-spacing: 0.25px;
-    opacity:0.5;
+    
 }
 
-select{
+#selectCategory{
     opacity:0.5;
     width: 80%;
     border:none;
@@ -99,7 +91,23 @@ select{
     letter-spacing: 0.25px;
 }
 
-label {
+#selectMovie-rating{
+    opacity:0.5;
+    width: 80%;
+    border:none;
+    height: 20px;
+    cursor: pointer;
+    background-color: #121212;
+    color: #82869A;
+    margin-bottom: 10px;
+    font: Avenir Next LT Pro;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+}
+
+ #uploadform-label{
     display: block;
     padding: 3px ;
     margin-bottom: 5px;
@@ -185,9 +193,23 @@ label {
         border-radius: 15px;
        
     } 
+    .uploadbtn{
+        padding: 8px 120px;
+    }
+    
+.custom-upload, .custom-upload2 {
+    padding: 5px 20px;
+    margin-bottom: 10px;
+    margin-top: 30px;
 }
+.custom-upload2 {
+    margin-top: 60px;
+} 
+  
 
-@media only screen and (max-width: 600px){
+
+
+@media only screen and (max-width: 400px){
     .Upload-container{
         display: grid;
         grid-template-columns: 100%;
@@ -199,12 +221,37 @@ label {
         font-weight: 500;
         
     }
-    .Upload{
-        background: #121212;
-        width: 80%;
-        margin: auto;
-        font-style: normal;
-        border-radius: 15px;
-       
+    .uploadbtn{
+        padding: 8px 10px;
+    }
+
+    .movie-container{
+        width:80%;
+        padding-left: 10px;
+    }
+
+    .custom-upload, .custom-upload2 {
+        padding: 5px 0px;
+        margin-bottom: 5px;
+        margin-top: 10px;
+    }
+
+    .custom-upload2 {
+        margin-top: 20px;
     } 
+    
+    .uploadform-inputs::placeholder{
+        font-size: 6px;
+        font-weight: 200;
+        line-height: 10px;
+       
+    }
+
+    .uploadform-inputs{
+        margin-bottom: 10px;
+        width: 80%;
+        color: #82869A;
+        padding: 5px 3px;
+    }
+}
 }
