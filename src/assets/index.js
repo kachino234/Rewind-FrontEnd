@@ -4,10 +4,16 @@ import Comedy from "./images/comedy.png";
 import Horror from "./images/horror.png";
 import Romance from "./images/romance.png";
 import Adventure from "./images/adventure.png";
-// import countDown from "./images/countdown.gif";
 import Avatar from "./images/avatar.png";
 import Line from "./images/line.png";
 import Logo from "./images/Rewind-logo.svg";
+import Signin from "./images/login.jpg";
+import Signupimg from "./images/signup.jpg";
+import Google from "./images/Google.svg";
+import Facebook from "./images/facebook.svg";
+import Or from "./images/or.svg";
+import Twitter from "./images/twitter.svg";
+// import Logo from "./images/logo.svg";
 
 // import Home from "./images/sidebar/Home-Icon.svg";
 
@@ -21,4 +27,10 @@ export {
   Avatar,
   Line,
   Logo,
+  Signin,
+  Signupimg,
+  Google,
+  Facebook,
+  Or,
+  Twitter,
 };
